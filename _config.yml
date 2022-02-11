@@ -8,7 +8,7 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
-# If you need help with YAML syntax, here are some quick references for you: 
+# If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 #
@@ -18,18 +18,21 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: ReplicaZone
-email: geeks@snipcart.com
+lang: de
+
+title: Edition Tirol
+email: editiontirol@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This demo store is a Jekyll-built static site. The shopping cart runs on Snipcart—it lets you add custom e-commerce to any site in minutes.
+  Der einzigartige Buchverlag
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: snipcart
-github_username:  snipcart
+facebook_username: editiontirol
 
 # Build settings
 plugins:
   - jekyll-feed
+
+excerpt_separator: <!-- more -->
 
 # Exclude from processing.
 # The following items will not be processed, by default.
