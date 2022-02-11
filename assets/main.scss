@@ -92,13 +92,13 @@ body {
 
 // Components
 .header {
+  background: $color--light;
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: $size--unit * 6;
   padding-top: $size--unit * 4;
   padding-bottom: $size--unit * 4;
-  border-bottom: 1px solid $color--light;
 
   &__container {
     display: flex;
@@ -138,7 +138,7 @@ body {
   }
 
   &__checkout-fill {
-    fill: $color--primary;
+    fill: #000;
   }
 
   &__actions {
@@ -170,9 +170,9 @@ body {
     flex-direction: row-reverse;
   }
 
-  &.detail &,
-  &:nth-last-of-type(odd) & {
-    &__information {
+  &.detail,
+  &:nth-of-type(odd) {
+    .book__information {
       margin-left: 0;
       margin-right: $size--unit * 4;
       @include sm {
@@ -180,7 +180,7 @@ body {
       }
     }
 
-    &__image {
+    .book__image {
       transform: perspective(650px) rotateZ(3deg) rotateX(-3deg) rotateY(-9deg) scale(0.8) translateX(30px);
       box-shadow: 30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
       @include sm {
@@ -279,6 +279,7 @@ body {
 }
 
 .footer {
+  background: #fff;
   border-top: 1px solid $color--light;
   margin-top: $size--unit * 12;
   &__content {
@@ -286,6 +287,15 @@ body {
     @include fit-to-layout-and-center();
     padding-top: $size--unit * 4;
     padding-bottom: $size--unit * 4;
+  }
+
+  &__copyright {
+    margin-right: auto;
+  }
+
+  &__dataprotection {
+    margin-left: auto;
+    margin-right:auto;
   }
 
   &__socials {
