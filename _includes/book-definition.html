@@ -1,0 +1,15 @@
+<div>
+  <input type="number" id="{{ book.identifier }}-qty" class="qty" min="1" value="1" />
+  <label for="{{ book.identifier }}-qty">Stück</label>
+  <button
+    class="buy-button snipcart-add-item"
+    data-item-quantity="1"
+    data-item-id="{{ book.identifier }}"
+    data-item-name="{{ book.name }}"
+    data-item-price="{{ book.price }}"
+    data-item-image="{{ book.image }}"
+    data-item-url="{{ page.url }}"
+    data-item-description="{{ book.excerpt | remove: '<p>' | remove: '</p>' }}">
+    Bestellen für {{ book.price | format_price }}
+  </button>
+</div>

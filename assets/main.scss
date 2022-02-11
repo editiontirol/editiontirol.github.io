@@ -151,13 +151,13 @@ body {
   @include fit-to-layout-and-center;
 }
 
-.products {
-  .product {
+.books {
+  .book {
 
   }
 }
 
-.product {
+.book {
   display: flex;
   align-items: center;
   flex-direction: row;

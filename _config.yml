@@ -55,13 +55,13 @@ excerpt_separator: <!-- more -->
 #   - vendor/ruby/
 
 collections:
-  products:
+  books:
     output: true
     permalink: /:collection/:name
 
 defaults:
   - scope:
       path: ''
-      type: products
+      type: books
     values:
-      layout: product
+      layout: book

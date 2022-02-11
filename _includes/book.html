@@ -1,0 +1,24 @@
+<div class="book{% if full_page %} detail{% endif %}">
+  <div class="book__information">
+
+    <h2 class="book__title"><a href="{{ book.url }}">{{ book.name }}</a></h2>
+
+    <img src="{{ book.image }}" alt="{{ book.name }} book image" class="book__image">
+    <p class="book__description">
+        {{ book.excerpt | remove: '<p>' | remove: '</p>' }}
+    </p>
+    {% if book.price %}
+    {% include book-definition.html %}
+    {% endif %}
+  </div>
+  <img src="{{ book.image }}" alt="{{ book.name }} book image" class="book__image">
+</div>
+  {% if full_page %}
+  <div class="book">
+    <div class="book__information">
+      <p class="book__description">
+      {{ book.content | split: site.excerpt_separator | last | remove: '<p>' | remove: '</p>' }}
+      </p>
+    </div>
+  </div>
+  {% endif %}
