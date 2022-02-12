@@ -8,7 +8,7 @@
     data-item-name="{{ book.name }}"
     data-item-price="{{ book.price }}"
     data-item-image="{{ book.image }}"
-    data-item-url="{{ page.url }}"
+    data-item-url="{{ book.url }}"
     data-item-description="{{ book.excerpt | remove: '<p>' | remove: '</p>' }}">
     Bestellen für {{ book.price | format_price }}
   </button>

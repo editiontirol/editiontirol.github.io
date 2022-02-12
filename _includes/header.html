@@ -9,7 +9,7 @@
     <div class="header__actions">
       <button class="header__checkout snipcart-checkout">
         {% include cart-icon.svg %}
-        <span class="snipcart-total-price">0,00 €</span>
+        <span class="snipcart-total-price">{{ 0 | format_price }}</span>
       </button>
     </div>
   </div>
