@@ -11,10 +11,26 @@ $color--light: lighten($color--default, 65%);
 $color--primary: #FDC80B;
 $color--secondary: #429bfc;
 $color--background: #f8faff;
+$color--footer: #fff;
+$color--header: darken($color--footer, 10%);
+
+$dark--default: #eee;
+$dark--light: darken($dark--default, 65%);
+$dark--background: #222;
+$dark--footer: #333;
+$dark--header: darken($dark--footer, 10%);
 
 $size--unit: 8px;
 
 $layout--max-width: 1000px;
+
+
+@mixin darkmode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
 
 // Default styling
 * {
@@ -22,6 +38,10 @@ $layout--max-width: 1000px;
   font-family: "Muli", sans-serif;
   font-size: $size--unit * 2;
   color: $color--default;
+
+  @include darkmode {
+    color: $dark--default;
+  }
 }
 
 html,
@@ -29,6 +49,10 @@ body {
   padding: 0;
   margin: 0;
   background-color: $color--background;
+
+  @include darkmode {
+    background-color: $dark--background;
+  }
 }
 
 // Mixins
@@ -59,7 +83,7 @@ body {
     transition: 0.2s all;
     background-color: darken($color, 10%);
     &:before {
-      transform: scale(1.1, 1.5);
+      transform: scale(1.05, 1.25);
     }
   }
 
@@ -92,13 +116,20 @@ body {
 
 // Components
 .header {
-  background: $color--light;
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: $size--unit * 6;
   padding-top: $size--unit * 4;
   padding-bottom: $size--unit * 4;
+
+  border-bottom: 1px solid $color--footer;
+  background: $color--header;
+
+  @include darkmode {
+  border-bottom: 1px solid $dark--footer;
+    background: $dark--header;
+  }
 
   &__container {
     display: flex;
@@ -138,7 +169,11 @@ body {
   }
 
   &__checkout-fill {
-    fill: #000;
+    fill: $color--default;
+
+    @include darkmode {
+      fill: $dark--default;
+    }
   }
 
   &__actions {
@@ -183,6 +218,11 @@ body {
     .book__image {
       transform: perspective(650px) rotateZ(3deg) rotateX(-3deg) rotateY(-9deg) scale(0.8) translateX(30px);
       box-shadow: 30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
+
+      @include darkmode {
+        box-shadow: 30px 30px 50px transparentize(black, 0.5);
+      }
+
       @include sm {
         transform: perspective(650px) rotateZ(3deg) rotateX(-3deg) rotateY(-9deg) scale(0.8) translateX(-30px);
       }
@@ -215,6 +255,10 @@ body {
     background-size: cover;
     transform: perspective(650px) rotateZ(-3deg) rotateX(3deg) rotateY(9deg) scale(0.8) translateX(-30px);
     box-shadow: -30px 30px 50px transparentize(darken($color--primary, 50%), 0.9);
+
+    @include darkmode {
+      box-shadow: -30px 30px 50px transparentize(black, 0.5);
+    }
 
     @include sm {
       transform: perspective(650px) rotateZ(3deg) rotateX(-3deg) rotateY(-9deg) scale(0.8) translateX(-30px);
@@ -279,9 +323,15 @@ body {
 }
 
 .footer {
-  background: #fff;
-  border-top: 1px solid $color--light;
   margin-top: $size--unit * 12;
+  border-top: 1px solid $color--light;
+  background: $color--footer;
+
+  @include darkmode {
+    border-top: 1px solid $dark--light;
+    background: $dark--footer;
+  }
+
   &__content {
     display: flex;
     @include fit-to-layout-and-center();

@@ -1,7 +1,10 @@
 <header class="header">
   <div class="header__container">
-    <a class="header__branding" href="/">
-      <img src="/assets/images/logo.svg" alt="{{ site.title }} Logo" class="header__logo">
+    <a href="/">
+      <picture class="header__branding">
+        <source srcset="/assets/images/logo-light.svg" media="(prefers-color-scheme: dark)">
+        <img src="/assets/images/logo.svg" alt="{{ site.title }} Logo" loading="Lazy" class="header__logo">
+      </picture>
     </a>
     <div class="header__actions">
       <button class="header__checkout snipcart-checkout">
